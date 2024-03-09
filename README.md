@@ -50,6 +50,9 @@ Note:  Some of these games make excessive use of strobe effects, which may be pr
 
 ## History
 
+v0.9.2
+* Fixed version ID
+
 v0.9.1
 * Added "Original Control" mode for Defender
 
