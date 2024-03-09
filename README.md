@@ -16,15 +16,19 @@ This core supports four games that are compatible with the "early" Williams 6809
 
 Note that the arcade games supported on the later Rev 1 board (Joust/Robotron, etc.), or Rev 2 (Joust 2, etc.) 6809 board are *not* supported by this core.
 
-## Special controls
+## Service Mode Controls
 
-The action buttons for each game can be remapped through the Analogue Pocket UI.
-
-Some additional controls (for the high-score-reset and and service menu ) are mapped as follows:
+Buttons for service-mode controls (for the high-score-reset and in-game service menu) are mapped as follows:
 
 * Advance -- Select + L
 * Auto-up -- R
 * Reset High Scores -- Select + R
+
+## Defender - "Original Control" Mode
+
+There is an additional control added to the UI when running Defender, allowing the user to select "Original Control Mode".  When selected, the "Reverse" and "Thrust" buttons are mapped to the L and R triggers respectively.
+
+When "Original Control" mode is disabled, the dpad controls both direction and thrust (as in most home-console ports of Defender/Stargate).
 
 ## Usage
 
@@ -45,6 +49,9 @@ To generate the `.rom` format binaries used by this core, you must use the MRA f
 Note:  Some of these games make excessive use of strobe effects, which may be problematic for individuals with photosensitivity, epilepsy, or other similar conditions.
 
 ## History
+
+v0.9.1
+* Added "Original Control" mode for Defender
 
 v0.9.0
 * Initial Release

@@ -442,6 +442,9 @@ parameter [2:0] GAME_ID_MAYDAY=3'd4;
 reg [2:0] game_id;
 reg [31:0] game_settings;
 
+wire original_controls;
+assign original_controls = game_settings[0];
+
 always @(posedge clk_74a) begin
   if(bridge_wr) begin
     casex(bridge_addr)
@@ -624,6 +627,7 @@ wire m_fire_a1   = joy[4];
 wire m_fire_b1   = joy[5];
 wire m_fire_x1   = joy[6];
 wire m_fire_y1   = joy[7];
+wire m_fire_l1   = joy[8];
 wire m_fire_r1   = joy[9];
 wire m_start1 =  joy[15];
 wire m_coin1   =  joy[14];
@@ -679,12 +683,12 @@ always @(posedge clk_sys) begin
 	GAME_ID_DEFENDER:
 		begin 
   			input1 <= { m_down1, 
-                (defender_state ? m_right1 : m_left1), 
+                original_controls ? m_fire_l1 : (defender_state ? m_right1 : m_left1), 
                 m_start1, 
                 m_start2, 
                 m_fire_y1, 
                 m_fire_b1, 
-                (defender_state ? m_left1 : m_right1), 
+                original_controls ? m_fire_r1 : (defender_state ? m_left1 : m_right1), 
                 m_fire_a1 };
 
 			input2 <= { 7'b000000, m_up1 };

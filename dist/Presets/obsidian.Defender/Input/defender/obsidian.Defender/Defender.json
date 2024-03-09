@@ -19,7 +19,17 @@
 						"id": 2,
 						"name": "Hyperspace",
 						"key": "pad_btn_y"
-					}					
+					},
+					{
+						"id": 3,
+						"name": "Reverse",
+						"key": "pad_trig_l"
+					},
+					{
+						"id": 4,
+						"name": "Thrust",
+						"key": "pad_trig_r"
+					}
 				]
 			}
 		]
